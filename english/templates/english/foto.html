@@ -1,0 +1,95 @@
+{% extends 'layot/basic.html' %}
+{% load static %}
+{% block content %}
+
+      <section class = "section_1 section_foto">
+        <div class = "price_table">
+          <div class = "price_time">
+            <div class = "time">
+              <p></p>
+            </div>
+            <div class = "time">
+              <p> 30 мин.</p>
+            </div>
+            <div class = "time">
+              <p> 45 мин.</p>
+            </div>
+            <div class = "time">
+              <p> 60 мин.</p>
+            </div>
+            <div class = "time">
+              <p> 90 мин.</p>
+            </div>
+          </div>
+          {% for price in prices %}
+          <div class = "price_works">
+            <div class = "works">
+              <p class = "bold">{{ price.title }}</p>
+            </div>
+            <div class = "works">
+              <p>{{ price.first_price }}</p>
+            </div>
+            <div class = "works">
+              <p>{{ price.two_price }}</p>
+            </div>
+            <div class = "works">
+              <p>{{ price.free_price }}</p>
+            </div>
+            <div class = "works">
+              <p>{{ price.four_price }}</p>
+            </div>
+          </div>
+          {% endfor %}
+          
+          {% for price in prices %}
+          <div class = "phone_works">
+            <div class = "works_cell">
+              <div class = "works_title bold">
+                {{ price.title }}
+              </div><div class = "works_css">
+              <div class = "mywork">
+              <div class = "works_time bold">
+                30 мин.
+              </div>
+              <div class = "works_man">
+                <div class = "w_m">
+                  {{ price.first_price }}
+                </div>
+              </div></div>
+              <div class = "mywork">
+              <div class = "works_time bold">
+                45 мин.
+              </div>
+              <div class = "works_man">
+                <div class = "w_m">
+                  {{ price.two_price }}
+                </div>
+              </div></div>
+              <div class = "mywork">
+              <div class = "works_time bold">
+                60 мин.
+              </div>
+              <div class = "works_man">
+                <div class = "w_m">
+                  {{ price.free_price }}
+                </div>
+              </div></div>
+              <div class = "mywork">
+              <div class = "works_time bold">
+                90 мин.
+              </div>
+              <div class = "works_man">
+                <div class = "w_m">
+                 {{ price.four_price }}
+                </div>
+              </div></div></div>  </div>
+            {% endfor %}
+          </div>
+
+
+
+        </div>
+      </section>
+
+    </main>
+       {% endblock %}

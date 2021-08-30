@@ -1,0 +1,223 @@
+{% load static %}
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+  <meta charset="utf-8">
+  <title>English Practice</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta property="og:title" content="">
+  <meta property="og:type" content="">
+  <meta property="og:url" content="">
+  <meta property="og:image" content="">
+
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="{% static 'english/img/icon.png' %}" >
+  <!-- Place favicon.ico in the root directory -->
+
+  <link rel="stylesheet" href="{% static 'english/css/normalize.css' %}">
+  <link rel="stylesheet" href="{% static 'english/css/main.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'english/slick/slick.css' %}"/>
+  <link rel="stylesheet" type="text/css" href="{% static 'english/slick/slick-theme.css' %}"/>
+
+
+  <meta name="theme-color" content="#fafafa">
+</head>
+<body>
+
+
+  <div class = "container">
+
+    <Header>
+
+      <div class = "header_content">
+        <div class = "header_bg">
+          <div class = "header_dark_bg">
+          </div>
+          <div class = "container_width">
+          <div class = "logo">
+            <div class = "logo_content">
+              <a href = "*"><img src = "{% static 'english/img/logo.png' %}"></a><br />
+            </div>
+            <div class = "header_title">
+              <h1>Репетитор английского языка</h1><br />
+            </div>
+          </div>
+          <div class = "contacts_bg">
+            <div class = "contacts">
+              <div class = "phone"><p><span  class = "no_visible">Телефон: </span><a href = "tel:89857042348"><img src = "{% static 'english/img/phone.png' %}">+7 (985)-704-23-48</a></p></div>
+            </div>
+            <div class = "header_button"><button>Отправить заявку</button></div>
+          </div>
+          </div>
+        </div>
+      </div>
+      <nav>
+         <div class = "burger_click">
+          <div class = "burger_icon">
+
+          </div></div>
+        <div class = "main_burger">
+        <div class = "burger">
+
+          <div class = "burger_menu">
+            <ul>
+             <a href = "{% url 'index' %}" ><li>Главная</li></a>
+             <a href = "{% url 'by_about_us' %}"> <li>Обо мне</li></a>
+              <a href = "{% url 'by_price' %}"><li>Цены</li></a>
+              <a href = "{% url 'by_reviews' %}"><li>Отзывы</li></a>
+              <a href = "{% url 'by_contacts' %}"><li>Контакты</li></a>
+            </ul>
+          </div>
+        </div>
+        </div>
+         <div class = "container_width">
+          <div class = "navigation">
+            <div class = "navigation_row">
+              <div class = "navigation_button">
+                <a href = "{% url 'index' %}">Главная</a>
+              </div>
+              <div class = "navigation_button">
+                <a href = "{% url 'by_about_us' %}">Обо мне</a>
+              </div>
+              <div class = "navigation_button">
+                <a href = "{% url 'by_price' %}">Цены</a>
+              </div>
+              <div class = "navigation_button">
+                <a href = "{% url 'by_reviews' %}">Отзывы</a>
+              </div>
+              <div class = "navigation_button">
+                <a href = "{% url 'by_contacts' %}">Контакты</a>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+      </nav>
+
+    </Header>
+    <main>
+{% block content %}
+
+{% endblock %}
+</body>
+<footer>
+      <div class = "footer">
+        <div class = "footer_bg">
+          <div class = "container_width">
+            <div class = "footer_logo">
+              <img src = "{% static 'english/img/logo2.png' %}">
+            </div>
+          </div>
+
+        </div>
+        <div class = "footer_custle">
+        </div>  
+
+      </div>
+
+    </footer>
+
+  </div>
+
+  <div class = "popup">
+
+  </div>
+
+  <div class = "popup_form">
+    <div class = "form">
+
+      <form action = "request.php" method = "POST">
+        <div class = "crst"><img src = "{% static 'english/img/chriest.png' %}"></div>
+        <h3>Оставьте нам заявку!</h3>
+        <div class = "popup_input"><input type = "text" name = "name" placeholder="Ваше имя"></div>
+        <div class = "popup_input"><input type = "email" name = "email" placeholder="E-mail"></div>
+        <div class = "popup_input"><input type = "tel" name = "phone" placeholder="Телефон" required></div>
+        <div class = "popup_textarea"><textarea placeholder="Комментарий" name = "comment"></textarea></div>
+        <div class = "popup_submit"><input type = "submit" name = "request" value = "Позвоните мне"></div>
+      </form>
+    </div>
+
+  </div>
+
+
+
+
+
+
+ <script>
+   var i = 1;
+$(".burger_icon").click(function() {
+  $(".popup").css("display", "block");
+  $(".burger").css("display", "block");
+  if(i%2 == 0) {
+    $(".popup").css("display", "none");
+    $(".burger").css("display", "none");
+  }
+  $(".popup").click(function() {
+  $(".popup").css("display", "none");
+    $(".burger").css("display", "none");
+    i = 1;
+})
+  i++;
+})
+  </script>
+  <script>
+$(".header_button").click(function() {
+  $(".popup").css("display", "block");
+  $(".popup_form").css("display", "flex");
+})
+$(".popup").click(function() {
+  $(".popup").css("display", "none");
+  $(".popup_form").css("display", "none");
+})
+$(".crst").click(function() {
+  $(".popup").css("display", "none");
+  $(".popup_form").css("display", "none");
+})
+
+  </script>
+
+  <script src="{% static 'english/js/vendor/modernizr-3.11.2.min.js' %}"></script>
+  <script src="{% static 'english/js/plugins.js' %}"></script>
+  <script src="{% static 'english/js/main.js' %}"></script>
+
+  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+  <script>
+    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+    ga('create', 'UA-XXXXX-Y', 'auto'); ga('set', 'anonymizeIp', true); ga('set', 'transport', 'beacon'); ga('send', 'pageview')
+  </script>
+  <script src="https://www.google-analytics.com/analytics.js" async></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+<script src="{% static 'english/slick/slick.js' %}"></script>  
+
+  <script>
+    $(document).ready(function(){
+  $('.responsive').slick({
+  autoplay: true,
+  infinite: true,
+  arrows: true,
+  dots: true,
+  speed: 2000,
+  slidesToShow: 2,
+  slidesToScroll:  1,
+  responsive: [
+    {
+      breakpoint: 650,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll:  1,
+      }
+    },]
+});
+  })
+  </script>
+  
+</body>
+
+</html>

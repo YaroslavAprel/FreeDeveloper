@@ -1,0 +1,44 @@
+{% extends 'layot/basic.html' %}
+{% load static %}
+{% block content %}
+      <section class = "section_1">
+        <div class = "sectiont_text">
+      <p> Рада приветствовать Вас на своем сайте!
+        <p><span class = "bold_text">Давайте знакомиться!</span></p>
+          <p>Меня зовут Ксения (Александровна). Я частный репетитор по английскому языку со стажем более 15 лет. В 2007г.
+        окончила ЛИИН (Барнаульский Лингвистический Институт Иностранных Языков) по специальности учитель английского языка.</p>
+          <p>После окончания института первые шесть лет работала в школах. Из них три года в московских школах (частная школа
+        "Приоритет" и ГБОУ СОШ №509). С 2014 года работаю частным репетитором.</p>
+        <p>Постоянно совершенствую свой уровень, прохожу курсы повышения квалификации, посещаю семинары и тренинги.
+        В декабре 2020г сдала ЕГЭ для учителей с уровнем - Эксперт.</p>
+          </div>
+        <div class = "video">
+          <video controls="controls">
+   <source src="{% static 'english/video/video.mp4' %}" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
+  </video>
+        </div>
+        <div class = "documents">
+          <div class = "documents_title">
+            <h3>Документы об образовании</h3>
+          </div>
+          <div class = "documents_imgs">
+            <div class = "documents_img"><img src = "{% static 'english/img/1.jpeg' %}"></div>
+            <div class = "documents_img"><img src = "{% static 'english/img/2.jpeg' %}"></div>
+            <div class = "documents_img"><img src = "{% static 'english/img/3.jpeg' %}"></div>
+            <div class = "documents_img"><img src = "{% static 'english/img/4.jpeg' %}"></div>
+            <div class = "documents_img documents_img_2"><img src = "{% static 'english/img/5.jpeg' %}"></div>
+            <div class = "documents_img"><img src = "{% static 'english/img/7.jpeg' %}"></div>
+            <div class = "documents_img documents_img_2"><img src = "{% static 'english/img/6.jpeg' %}"></div>
+            <div class = "documents_img documents_img_2"><img src = "{% static 'english/img/8.jpeg' %}"></div>
+          </div>
+
+        </div>
+
+
+
+
+
+      </section>
+
+    </main>
+   {% endblock %}
